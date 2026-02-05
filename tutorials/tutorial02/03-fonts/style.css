@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 100px;
+}
+
+h1, h2 {
+    font-family: "Asimovian", sans-serif;
+}
