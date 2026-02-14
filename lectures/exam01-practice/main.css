@@ -38,10 +38,9 @@ nav, main, aside {
 }
 
 /* When making rules for mobile, you need a "media query" */
-@media screen and (max-width: 600px) {
+@media (max-width: 800px) {
     .grid-layout {
         grid-template-columns: 1fr;
-        background-color: hotpink;
     }
 
     header, footer {
