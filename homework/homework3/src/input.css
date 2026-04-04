@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.timestamp {
+  color: #999999;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 8px 0 3px;
+}

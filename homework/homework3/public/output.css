@@ -556,6 +556,64 @@ video {
   display: none;
 }
 
+.container{
+  width: 100%;
+}
+
+.\!container{
+  width: 100% !important;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+
+  .\!container{
+    max-width: 640px !important;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+
+  .\!container{
+    max-width: 768px !important;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+
+  .\!container{
+    max-width: 1024px !important;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+
+  .\!container{
+    max-width: 1280px !important;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+
+  .\!container{
+    max-width: 1536px !important;
+  }
+}
+
 .fixed{
   position: fixed;
 }
@@ -604,6 +662,26 @@ video {
   display: none;
 }
 
+.h-10{
+  height: 2.5rem;
+}
+
+.h-12{
+  height: 3rem;
+}
+
+.h-16{
+  height: 4rem;
+}
+
+.w-10{
+  width: 2.5rem;
+}
+
+.w-12{
+  width: 3rem;
+}
+
 .w-16{
   width: 4rem;
 }
@@ -614,10 +692,6 @@ video {
 
 .w-full{
   width: 100%;
-}
-
-.min-w-\[80\%\]{
-  min-width: 80%;
 }
 
 .flex-col{
@@ -672,6 +746,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-t{
+  border-top-width: 1px;
+}
+
 .border-gray-300{
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
@@ -689,6 +767,11 @@ video {
 
 .bg-cover{
   background-size: cover;
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-2{
@@ -756,10 +839,6 @@ video {
   font-weight: 700;
 }
 
-.uppercase{
-  text-transform: uppercase;
-}
-
 .text-blue-500{
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity, 1));
@@ -778,6 +857,18 @@ video {
 .text-gray-500{
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+}
+
+.text-red-500{
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+}
+
+.timestamp {
+  color: #999999;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin: 8px 0 3px;
 }
 
 .focus\:outline-none:focus{
