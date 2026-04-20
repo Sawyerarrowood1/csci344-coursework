@@ -1,0 +1,26 @@
+Short Answer Questions:
+
+1. Plants, comments, users is not defined in YAML.
+2. The brand row is using data from the "brand" table. The owner row is using data from the "user" table.
+3. Required fields cannot be null. Optional fields can be null.
+4. npm run seed resets the data all at once, while the API/data grid changes it little by little.
+5. You run generate first so that the code matches your new API changes before adding data.
+6. The main path stayed the same, but extra parameters were added to the end of the URL to represent the filters which I could see in the Network tab.
+7. /api/sneakers?name=running
+8. /api/docs lets you test API requests directly, while the data grid lets you view and edit the data in a table format.
+9. Using a PlantType resource keeps data consistent and avoids duplicate or misspelled species names.
+10. 
+/api/bosses
+field: name, location, difficulty, defeated, notes
+queryable: name, location, defeated
+relationship: Boss -> Region
+
+/api/regions
+fields: name, description
+queryable: name
+relationship: Region -> Bosses 
+
+/api/comments
+fields: body, boss
+queryable: boss
+relationship: Comment -> Boss

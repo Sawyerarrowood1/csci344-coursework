@@ -1,0 +1,69 @@
+resources:
+
+  - type: PlantType
+    path: /api/plant-types
+    operations: [list, retrieve, create, update, delete]
+    fields:
+      - name: name
+        type: string
+        required: true
+        query: true
+      - name: description
+        type: text
+    permissions:
+      list: public
+      retrieve: public
+      create: user
+      update: owner
+      delete: owner
+
+  - type: Plant
+    path: /api/plants
+    operations: [list, retrieve, create, update, delete]
+    fields:
+      - name: name
+        type: string
+        required: true
+        query: true
+      - name: image_url
+        type: image_url
+        required: true
+        query: true
+      - name: plant_type   # ✅ REPLACED species
+        type: PlantType
+        required: true
+        query: true
+      - name: planted_year
+        type: integer
+      - name: latitude
+        type: number
+        required: true
+      - name: longitude
+        type: number
+        required: true
+      - name: notes
+        type: text
+    permissions:
+      list: public
+      retrieve: public
+      create: user
+      update: owner
+      delete: owner
+
+  - type: Comment
+    path: /api/comments
+    operations: [list, retrieve, create, update, delete]
+    fields:
+      - name: body
+        type: text
+        required: true
+      - name: plant
+        type: Plant
+        required: true
+        query: true
+    permissions:
+      list: public
+      retrieve: public
+      create: user
+      update: owner
+      delete: owner
