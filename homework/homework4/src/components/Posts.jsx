@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getDataFromServer } from "../server-requests";
-import Post from "./Post.jsx";
+import Post from "./Post";
 
 export default function Posts({ token }) {
     const [posts, setPosts] = useState([]);
@@ -12,7 +12,7 @@ export default function Posts({ token }) {
 
     useEffect(() => {
         getPosts();
-    }, []);
+    }, [token]);
 
     return (
         <div>

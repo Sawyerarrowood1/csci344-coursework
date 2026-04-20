@@ -1,7 +1,7 @@
 import React from "react";
 import { postDataToServer, deleteDataFromServer } from "../server-requests";
 
-export default function Bookmark({ token, bookmarkId, postId, refreshPosts }) {
+export default function BookmarkButton({ token, bookmarkId, postId, refreshPosts }) {
 
     async function createBookmark() {
         await postDataToServer(token, "/api/bookmarks/", {
