@@ -1,0 +1,46 @@
+resources:
+
+  - type: User
+    fields:
+      - name: role
+        type: string
+        required: true
+        default: user
+        choices: [user, admin]
+
+      - name: display_name
+        type: string
+        query: true
+
+  - type: Boss
+    path: /api/bosses
+    operations: [list, retrieve, create, update, delete]
+
+    fields:
+      - name: name
+        type: string
+        required: true
+        query: true
+
+      - name: location
+        type: string
+        required: true
+        query: true
+
+      - name: difficulty
+        type: integer
+        required: true
+        query: true
+
+      - name: defeated
+        type: boolean
+        required: true
+        default: false
+        query: true
+
+    permissions:
+      list: public
+      retrieve: public
+      create: user
+      update: [admin, owner]
+      delete: [admin, owner]

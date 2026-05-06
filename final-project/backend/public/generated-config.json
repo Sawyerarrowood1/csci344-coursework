@@ -1,0 +1,160 @@
+{
+  "meta": {
+    "configPath": "C:\\Users\\Owner\\Desktop\\csci344-coursework\\csci344-coursework\\final-project\\backend\\api.config.yaml",
+    "generatedAt": "2026-05-06T00:36:12.223Z",
+    "seedDir": "data\\sample-data"
+  },
+  "userResource": {
+    "type": "User",
+    "tableName": "users",
+    "fields": [
+      {
+        "name": "role",
+        "type": "string",
+        "storageType": "string",
+        "required": true,
+        "default": "user",
+        "choices": [
+          "user",
+          "admin"
+        ],
+        "relation": null,
+        "query": null
+      },
+      {
+        "name": "display_name",
+        "type": "string",
+        "storageType": "string",
+        "required": false,
+        "relation": null,
+        "query": {
+          "param": "display_name",
+          "op": "contains"
+        }
+      }
+    ]
+  },
+  "resources": [
+    {
+      "type": "Boss",
+      "tableName": "bosses",
+      "fileBase": "bosses",
+      "path": "/api/bosses",
+      "operations": [
+        "list",
+        "retrieve",
+        "create",
+        "update",
+        "delete"
+      ],
+      "shareable": false,
+      "ownershipEnabled": true,
+      "fields": [
+        {
+          "name": "name",
+          "type": "string",
+          "storageType": "string",
+          "required": true,
+          "relation": null,
+          "query": {
+            "param": "name",
+            "op": "contains"
+          }
+        },
+        {
+          "name": "location",
+          "type": "string",
+          "storageType": "string",
+          "required": true,
+          "relation": null,
+          "query": {
+            "param": "location",
+            "op": "contains"
+          }
+        },
+        {
+          "name": "difficulty",
+          "type": "integer",
+          "storageType": "integer",
+          "required": true,
+          "relation": null,
+          "query": {
+            "param": "difficulty",
+            "op": "eq"
+          }
+        },
+        {
+          "name": "defeated",
+          "type": "boolean",
+          "storageType": "boolean",
+          "required": true,
+          "default": false,
+          "relation": null,
+          "query": {
+            "param": "defeated",
+            "op": "eq"
+          }
+        }
+      ],
+      "permissions": {
+        "list": "public",
+        "retrieve": "public",
+        "create": "user",
+        "update": [
+          "admin",
+          "owner"
+        ],
+        "delete": [
+          "admin",
+          "owner"
+        ]
+      },
+      "queryFilters": [
+        {
+          "param": "name",
+          "fieldName": "name",
+          "op": "contains",
+          "type": "string",
+          "storageType": "string",
+          "relation": null,
+          "choices": null
+        },
+        {
+          "param": "location",
+          "fieldName": "location",
+          "op": "contains",
+          "type": "string",
+          "storageType": "string",
+          "relation": null,
+          "choices": null
+        },
+        {
+          "param": "difficulty",
+          "fieldName": "difficulty",
+          "op": "eq",
+          "type": "integer",
+          "storageType": "integer",
+          "relation": null,
+          "choices": null
+        },
+        {
+          "param": "defeated",
+          "fieldName": "defeated",
+          "op": "eq",
+          "type": "boolean",
+          "storageType": "boolean",
+          "relation": null,
+          "choices": null
+        },
+        {
+          "param": "owner_id",
+          "fieldName": "owner_id",
+          "op": "eq",
+          "type": "integer",
+          "storageType": "integer",
+          "relation": null
+        }
+      ]
+    }
+  ]
+}
