@@ -18,7 +18,8 @@ export default function Login({ handleLoggedIn }) {
         body: JSON.stringify({
           username: username,
           password: password,
-        });
+        }),
+      });
 
       const data = await res.json();
 
