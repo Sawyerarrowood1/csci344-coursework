@@ -38,8 +38,12 @@ async function main() {
   const db = await initDatabase(projectRoot);
   const app = express();
 
-  app.use(cors());
-  app.use(express.json());
+  app.use(cors({
+    origin: [
+      "http://localhost:5173",
+      "https://final-project-black-seven.vercel.app"
+    ]
+  }));
 
   function sendGeneratedConfig(_req, res) {
     res.type("application/json").json(generatedConfig);
