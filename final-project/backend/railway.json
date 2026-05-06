@@ -1,6 +1,6 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "deploy": {
-    "startCommand": "DATABASE_PROVIDER=postgres npm run generate -- --yes && DATABASE_PROVIDER=postgres npm run seed && DATABASE_PROVIDER=postgres node src/server.js"
+    "startCommand": "DATABASE_PROVIDER=postgres npm run generate --yes && DATABASE_PROVIDER=postgres npm run seed -- --yes && DATABASE_PROVIDER=postgres node src/server.js"
   }
 }
